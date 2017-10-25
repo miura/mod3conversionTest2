@@ -17,3 +17,35 @@ The first image is a staining for the nuclei, all subsequent images are acquired
     
     \item Split Channels to get independent images for each fluorescence channel.
     \ijmenu{[Images > Color > Split Channels]}
+\item Remove the scale of the opened images by 
+    \ijmenu{[Analyze > Set Scale\ldots]}. 
+    Use the same settings as in Fig.~\ref{fig:init}:
+
+\begin{itemize}
+        \item\textbf{distance} and \textbf{known distance} to "0" and  
+        \item\textbf{Pixel aspect ratio} to "1".  
+        \item The \textbf{Unit length} should be "pixel". 
+        \item  \textbf{Global} should be ticked so that the settings apply to all images (and subsequently opened images).
+
+\end{itemize}
+
+Alternatively, press the "click to remove scale" button. 
+    
+    \item Set Binary Options 
+    \ijmenu{[Process > Binary > Options...]}.
+    Make sure "Iterations" and "Count" are both set to 1 and that "Black background" and "Pad edges when eroding" are NOT ticked. EDM output should be set to overwrite. These settings correspond to ImageJ default settings and it is a good habit to always set them to predictable values at the beginning of a macro since they control the behavior of many commands that are commonly used. 
+    
+    \item Set Measurements 
+    \ijmenu{[Analyze > Set Measurements...]}.
+
+\begin{itemize}
+        \item\textbf{Area,} 
+        \item\textbf{Mean gray value,} 
+        \item and \textbf{Shape Descriptors} 
+        
+        \item\textbf{Redirect} should be set to "None" 
+        \item\textbf{Decimal places} should be 2 or greater.  
+    
+\end{itemize}
+
+\end{enumerate}    
