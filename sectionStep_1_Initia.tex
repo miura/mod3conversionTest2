@@ -1,0 +1,19 @@
+\section{Step 1: Initialization---a short warm-up}
+
+\subsection{Workflow}
+
+In Fiji, perform the steps described in this section with the command recorder open and create a macro from the recorder.
+We will use the image \textbf{Small.tif} .\\
+
+This hyperstack (4 channels) is a crop view from of a single field of a confocal dataset.
+Each image is a maximum intensity projection, per channel, of the original data. 
+The first image is a staining for the nuclei, all subsequent images are acquired in the fluorescence channels of the FISH stainings.
+
+\begin{enumerate}
+    \item Open the image file in Fiji by
+    \ijmenu{[File > Open...]} or by drag and drop of the file on the Fiji bar.
+    
+    \item Examine the hyperstack using the stack browser (slider).
+    
+    \item Split Channels to get independent images for each fluorescence channel.
+    \ijmenu{[Images > Color > Split Channels]}

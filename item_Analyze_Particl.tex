@@ -1,0 +1,26 @@
+\item Analyze Particles.
+    At this point we obtained a binary image holding the segmented nuclei.
+    Using \ijmenu{[Analyze > Analyze Particle]} we can identify and measure several properties of these connected particles. This command also allows us to exclude an object based on its geometry. For our purpose,  we want to exclude deformed particles and particles that are too small or too big.
+    
+    To exclude deformed particles, we can measure their circularity. The circularity describes how closely an object resembles a circle by computing the ratio between its area and its square perimeter. A perfect circle has a circularity parameter = 1. Any other object will have a circularity parameter smaller than 1, but greater than 0 (an infinite line). 
+    
+    Particles that are smaller or larger than given critical areas can also be excluded. The area bounds should be first determined empirically: you can do so by measuring the area of a typical nucleus and setting the lower and upper bounds to, for instance 0.66x and 1.5x this value. 
+    
+    Finally, particles touching a border can be easily discarded by ticking "Exclude on edges" in \ijmenu{[Analyze > Analyze Particles...]}. The purpose is to analyse FISH spots by nucleus, do not forget to also tick 'Add to Manager' to add the nuclei analyzed to the ROI Manager so that they can easily be accessed further on.
+
+\end{enumerate}
+
+\subsection{Exercise \arabic{exerciseCounter}}
+\stepcounter{exerciseCounter}
+Following the workflow described above write a macro to segment the nuclei in the image \textbf{"C1-Small.tif"} . The solution to this exercise is provided in: \textbf{code/solutions/module3\_02simple.ijm} .
+
+\textbf{\underline{Note}} : The lower bound of the threshold should be set to the minimum intensity of the image, search for a macro function allowing to retrieve this value.
+
+\subsection{Exercise \arabic{exerciseCounter}}
+\stepcounter{exerciseCounter}
+
+The lower and upper bounds of the nuclei area have been so far empirically set, we will now automate the estimation of these bounds. For this we will first analyze the particles after thresholding without setting any area bounds (do not add the particles to the ROI manager at this point). The areas of the analyzed particles will be measured to results table and copied to an array to be further processed (this can be done by writing a loop). Assuming that valid nuclei are in majority, try to figure out a way to estimate the lower and higher area bounds from the area measurements. Finally we will analyze the particles again but this time setting lower and upper area bounds (and adding them to the ROI manager).\\
+
+\textbf{\underline{Hint}} : A useful function that we will make use of is \textbf{Array.sort(MyArray)} . The median can be computed by sorting the n areas and selecting the n/2$^{th}$ area.\\
+ 
+Using this technique we can analyze images that have been taken with a wide variety of magnifications without having to manually adapt the "typical" area. You can find the solution to both exercises as a complete macro in \textbf{code/solutions/module3\_02.ijm} .

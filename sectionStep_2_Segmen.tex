@@ -1,0 +1,15 @@
+\section{Step 2: Segment Nuclei}
+
+Here, we will segment the nuclei in the image of the first channel \textbf{"C1-Small.tif"} . We would like to ignore deformed (Fig.~\ref{fig:NucDeformed}) and unusually small (Fig.~\ref{fig:NucSmall}) or large nuclei. In addition, the algorithm should identify touching nuclei (Fig.~\ref{fig:NucTwo}) so that these clusters are either ignored or properly split.
+
+\subsection{Workflow}
+
+We will first perform some manual processing on the image of the first channel to understand each step. After this we write a macro to perform these operations automatically (see Module 2 for an introduction of the macro programming language). Leave the command recorder open to record operations as you manually perform them.
+
+\begin{enumerate}
+    \item Select Image (make window active). 
+    In Step 1 we split the channels of the original hyperstack. Now we have four independent images. To process the nuclei channel image we need to make it "active" by clicking on its window: make \textbf{"C1-Small.tif"} active.
+    
+    \underline{\textbf{Note} }: To select an image from a macro, we use the function \textbf{selectImage("name")} where "name" is the name of the image window. 
+    Alternatively the identifier (ID) of an image can be passed to \textbf{selectImage()} . 
+    This ID must first be retrieved by calling \textbf{getImageID()} at a step where the image is known to be "active".

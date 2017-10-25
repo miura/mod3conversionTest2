@@ -1,0 +1,35 @@
+\textbf{sourcecode} : \href{http://www.example.com/contents}{code/solutions/module3\_02.ijm}
+
+\subsection{Summary of tools used in Step 2}
+\label{summary_of_tools_mod_3_step_2}
+
+\begin{itemize}
+
+\item \textbf{FeatureJ Laplacian} \\
+\ijmenu{[Plugins > Feature Extraction > FeatureJ > FeatureJ Laplacian]}.\\
+\url{http://imagescience.org/meijering/software/featurej/}\\
+ After applying a Gaussian filter with radius defined by the smoothing scale this command computes the sum of the second order spacial derivatives of the intensity along the Cartesian directions at each pixel. \\
+It is used to emphasize large isotropic intensity curvature (domes) in an image. This combination of filters (Gaussian followed by Laplacian) is called "LoG" for Laplacian of Gaussian and is commonly used for spot or blob enhancement. The optimal smoothing scale is directly related to the radius of the blob-like objects to be enhanced. The LoG is ubiquitous in image processing and was popularized by \cite{lindeberg1993scale} for feature detection in the framework of the scale-space theory.
+
+\item \textbf{Convert to Mask} \ijmenu{[Image > Binary > Convert to Mask]}.\\
+Convert a gray-scale image into a binary (black and white) image, the active threshold is used to define whether a pixel is part of the foreground or of the background.
+
+\item \textbf{setThreshold} \ijmenu{[Image > Adjust > Threshold ...]}.\\
+Set the values of the threshold bounds.
+
+\item \textbf{Fill Holes} \ijmenu{[Process > Binary > Fill Holes]}.\\
+Fill holes in the connected particles (objects) of a binary image.
+
+\item \textbf{Analyze Particles} \ijmenu{[Analyze > Analyze Particles...]}.\\
+Find the connected particles in a binary image and optionally filter them (keep/discard) based on their area, geometric properties or location (touching an edge of the image).
+
+\item \textbf{Dilate} \ijmenu{[Process > Binary > Dilate]}.\\
+Enlarge the objects in a binary image. This command enlarges the boundaries of the objects by one pixel.
+
+\item \textbf{Watershed} \ijmenu{[Process > Binary > Watershed]}.\\
+Intent to split touching/overlapping particles to individual particles in a binary image.
+
+\end{itemize}
+ 
+ 
+\newpage

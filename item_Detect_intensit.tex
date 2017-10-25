@@ -1,0 +1,24 @@
+\item Detect intensity regional minima with \ijmenu{[Process > Find Maxima...]}. You should tick \textbf{"Light background"} to detect minima and adjust \textbf{"Noise tolerance"} to optimize detection. Select \textbf{"Single Points"} as \textbf{"Output Type"} to create a binary mask with detected minima.
+    
+    \item Counting spots inside nuclei.
+    In Step 2 we have already segmented the nuclei and stored them to the ROI manager. Now, we simply need to select the binary mask holding the detect spots and loop through the nuclei ROIs. Next, we count the number of pixels with intensity equal to 255 to retrieve the number of spots per nucleus.
+    
+    For each nucleus we will measure the statistics of the intensity with the macro function \textbf{getRawStatistics(nPixels, mean, min, max, std, histogram)} which among other returns the histogram of the pixel intensity inside the active selection.
+
+\end{enumerate}
+
+\subsection{Exercise \arabic{exerciseCounter}}
+\stepcounter{exerciseCounter}
+Complete the macro \textbf{code/module3\_03simple-incomplete.ijm} to perform the previous sequence on the three FISH channels. Before launching the macro you need to have \textbf{C2-Small.tif} opened and the detected nuclei stored in the ROI Manager.
+
+Open, read, and test the macro. The macro automatically segments the FISH spots following the workflow we previously described but the part counting the spots in each nucleus is incomplete. Several tasks have to be performed:
+
+\begin{enumerate}
+
+\item Write the missing code to detect the intensity regional minima. If you perform it right you should see a list of values indicating the number of spots detected in each nucleus in the log window. Solution in \textbf{code/solutions/module3\_03simple.ijm} .
+
+\item Modify the code to automatically repeat the same workflow on the other 2 channels. This time you need the 3 channels opened before running the code. Solution in \textbf{code/solutions/module3\_03.ijm} .
+
+\end{enumerate}
+
+\textbf{\underline{Hint}} : You will need a loop over the channels. To properly select the correct image at each iteration you can make use of string concatenation (the channel images are called \textbf{"C2-Small.tif"} , \textbf{"C3-Small.tif"} and \textbf{"C4-Small.tif"} ).

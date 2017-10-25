@@ -1,0 +1,159 @@
+
+\iflatexml
+\documentclass[11pt,a4paper,oneside]{report}
+\fi
+
+% \usepackage{mathpazo} % Not (yet) supported by LaTeXML.
+ 
+\linespread{1.05}        
+% \usepackage[scaled]{helvet} % Not (yet) supported by LaTeXML.
+ 
+% \usepackage{courier} % Not (yet) supported by LaTeXML.
+\normalfont
+% \usepackage[T1]{fontenc} % Not (yet) supported by LaTeXML.
+
+\usepackage[footnotesize]{caption}
+
+\usepackage{subfig}
+\linespread{1.05}
+\parskip 7.2pt
+\usepackage{setspace}
+
+\onehalfspacing
+\usepackage{framed}
+\usepackage{pdfsync}
+
+\sloppy
+\setlength{\parindent}{0in}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+
+\definecolor{gray09}{rgb}{0.9,0.9,0.9}  
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{blue}{rgb}{0,0,1}
+\definecolor{lightblue}{rgb}{0,0.8,1}
+\definecolor{Dark}{gray}{.2}
+\definecolor{Medium}{gray}{.6}
+\definecolor{Light}{gray}{.8}
+\definecolor{shadecolor}{rgb}{0.9, 0.9, 1}
+% \usepackage{epstopdf} % Not (yet) supported by LaTeXML.
+\usepackage{natbib}
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \bibpunct{(}{)}{;}{a}{,}{,}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true, 
+	citecolor=blue, 
+	linkcolor=blue, 
+	urlcolor=blue}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1][]{\markboth{#1}{}}
+
+\renewcommand{\sectionmark}[1][]{\markright{\thesection\ #1}{}}
+
+ 
+\lhead{\fancyplain{}{\textit{BIAS2015} }}
+\chead{}
+\rhead{\fancyplain{}{\textit{\rightmark} }}
+\lfoot{}
+\cfoot{\fancyplain{}{\thepage}}
+\rfoot{}
+\newenvironment{indentexercise}[1]
+{{\setlength{\leftmargin}{2em}}
+\textbf{Exercise \thesubsection-#1}
+\begin{list}
+{}
+	\item
+}
+{\end{list}
+}
+\newenvironment{indentFiji}
+{
+\begin{list}
+{}
+         {\setlength{\leftmargin}{1em}}
+         \item[]
+}
+{\end{list}
+}
+\newenvironment{indentCom}
+{
+\begin{list}
+{}
+         {\setlength{\leftmargin}{1em}}
+         \item[]
+}
+{\end{list}
+}
+\newcommand{\ijmenu}[1][]{\texttt{\small#1}}
+\newcommand{\ilcom}[1][]{\texttt{\small#1}}
+\newcommand{\tab}[][]{\hspace*{3em}}
+\newcommand{\HRule}[][]{\rule{\linewidth}{0.5mm}}
+% \usepackage{textcomp} % Not (yet) supported by LaTeXML.
+
+\newcommand*{\micro}[][]{\textmu}
+\usepackage{listings}
+
+\lstset{ 
+basicstyle=\small\ttfamily, 
+numbers=left,                   
+numberstyle=\footnotesize,      
+stepnumber=1,                   
+numbersep=5pt,                  
+backgroundcolor=\color{gray09},  
+keywordstyle=\color{blue}, 	
+showspaces=false,               
+showstringspaces=false,         
+showtabs=false,                 
+tabsize=2,                      
+captionpos=b,                   
+breaklines=true,                
+title=\lstname,                 
+escapeinside={\%*}{*)},         
+morekeywords={*,...},            
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},
+morestring=[b]",
+}
+\newcommand*{\titleTH}[][]{\begingroup
+\raggedleft
+
+\textsc{\textbf{\Large{Bias2015 \hfill Module 3}}} 
+\HRule\\
+\vspace*{\baselineskip}
+
+
+\hfill \textsc{{\large Authors:}}\\
+[0.3\baselineskip]
+\hfill {\Large Ulrike Schulze}\\
+{\small EMBL Heidelberg}\\
+[0.3\baselineskip]
+\hfill {\Large S\'{e}bastien Tosi}\\
+{\small IRB Barcelona}\\
+\vfill
+
+
+{\textcolor{Medium}{\Huge FISH Spot Detection  in \\ Human Spermatozoids }}\\
+[2\baselineskip]
+
+{\bfseries BIAS2015 BioImage Data Analysis Course}\\
+\textbf{EMBL Heidelberg}\\
+\textbf{7-13 June 2015}
+
+\vfill
+
+\hfill\textsc{Reviewers/Teachers:}\\
+[0.3\baselineskip]
+{\large Perrine Paul-Gilloteaux}\\
+{\small \hfill Institut Curie, Paris}\\
+[0.3\baselineskip]
+{\large \hfill Simon F. N\o rrelykke}\\
+{\small \hfill ETH Z\"urich}\\
+\HRule\\
+
+{\small \hfill\textcolor{Medium}{ Compiled on: \today }}
+\endgroup}

@@ -1,0 +1,50 @@
+\begin{enumerate}
+    \item Overlaying the FISH spots on the original image.
+    Select "SpotCandidates", the binary image holding the detected spots, threshold the image and then call \ijmenu{[Edit > Selection > Create Selection]}. The selection can then be transferred (restored) to another image using \ijmenu{[Edit > Selection > Restore Selection]} or saved to the ROI manager. To make the spots more visible, we increase their size in the selection with \ijmenu{[Edit > Selection > Enlarge... ]}. You can try to restore the selection on the original image to check the accuracy of the detection.
+
+\item Coloring the nuclei according to number and type of FISH spots.
+    
+    The color of the nuclei should be set according to their multiplicity of spots. For example, a nucleus with two red spots and two blue spots should have a different color than a nucleus with one red spot and one green spot.
+    
+    To achieve this, we take advantage from the fact that all colors are displayed as a combination of red, green and blue. How much of red, green and blue is used for a color is described by a number from 0 to 255. This number is written as a hexadecimal number (from 00 to FF). In this system white is coded as FFFFFF (red: intensity 255, green: intensity 255, blue: intensity: 255). Black is coded as 000000 (red:0, green:0, blue:0). Pure red would be coded as FF0000 (red: 255, blue:0, green:0) and purple would be coded as FF00FF (red: 255, green:0, blue: 255).
+    
+    To color the nuclei we will loop again through their selections in the ROI manager and assign them a specific stroke color depending on the spot counts. As we do not expect the number of spots to exceed 2 per nucleus the color will be simply defined as follow:
+    
+    red: 63+64*Number of spots in channel 1\\
+    green: 63+64* Number of spots in channel 2\\
+    blue: 63+64 * Number of spots in channel 3.
+    
+
+\end{enumerate}
+
+\subsection{Exercise  \arabic{exerciseCounter}}
+\stepcounter{exerciseCounter} 
+Starting from the macro \textbf{code/module\_03.ijm} and following the steps described in the section "Marking the FISH spots" add the missing code to show an overlay of the detected spots (store the selection to the ROI manager with \ijmenu{[Edit > Selection > Add to Manager}]). The code should be added at the end of the loop over the FISH channel.
+
+\underline{\textbf{Hint} }: You should start by reducing the upper limit of the loop so that only the first channel is processed. Then only try to make your macro run over the three channels (this is a typical debugging trick).
+
+Now try to implement the steps of the section "Marking the nuclei according to number and type of FISH spots".
+
+\underline{\textbf{Hint} }: To change the color of a selection of the ROI Manager you will have to select it first with \textbf{roiManager("select", ...)} then call \ijmenu{Edit > Selection > Properties} and update the selection in the ROI Manager with \textbf{roiManager("update")} . To understand the parameters that should be passed to the command record it and input a stroke color of the type FFxxxxxx where the xx stands for each of the three hexadecimal values of the RGB color channels (the first field codes the transparency, we set it to FF which is equivalent to non transparent).
+
+\underline{\textbf{Note} }:The macro function \textbf{toHex} converts a decimal number to its hexadecimal representation.
+
+Finally open the solution \textbf{code/solutions/module3\_03-04.ijm} to the previous exercise and test it. As you will notice the overlay of the spots is not associated to the slice (channel) in which they were detected but they all appear simultaneously. By un-commenting the last section of the code you can modify this behaviour\ldots understand how it works!
+
+\subsection{Summary of tools used in Step 4}
+
+\begin{itemize}
+\item \textbf{Create Selection} \ijmenu{[Edit > Selection > Create Selection]}.\\
+This command creates a selection from a binary image (foreground selected).
+
+\item \textbf{Restore Selection} \ijmenu{[Edit > Selection > Restore Selection]}.\\
+Restore the last selection that was active. Shortcut key: Shift-Ctrl-E (Windows), Shift-Cmd-E (Mac), Shift-E (if control or command key is specified as not required)
+
+\item \textbf{Enlarge} \ijmenu{[Edit > Selection > Enlarge]}.\\
+Enlarge (dilate) a selection by a given number of pixels.
+
+\item \textbf{ROI Manager} See ``ImageJ Basics''.
+
+\end{itemize}
+
+\newpage
