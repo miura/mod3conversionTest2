@@ -18,7 +18,6 @@ figures/mod3mergedfig-NucOverlayDilate
 item_Watershed_____i.tex
 figures/NucBeforeWatershed
 item_Analyze_Particl.tex
-lstlisting_linerange14__Input__.tex
 textbfsourcecode__hr1.tex
 sectionStep_3_FISH_s.tex
 figures/Ch3BeforeLaplacian
@@ -31,15 +30,10 @@ beginenumerate_____i.tex
 sectionSolutions_to_.tex
 lstlisting__Input___.tex
 textbfsourcecode__hr3.tex
-lstlisting__Input___.tex
 textbfsourcecode__hr4.tex
-lstlisting__Input___.tex
 textbfsourcecode__hr5.tex
-lstlisting__Input___.tex
 textbfsourcecode_.tex
-lstlisting__Input___.tex
 textbfsourcecode__hr6.tex
-lstlisting__Input___.tex
 textbfsourcecode__hr7.tex
 sectionAssignments__.tex
 sectionAcknowledgeme.tex
