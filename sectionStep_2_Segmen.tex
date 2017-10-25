@@ -41,4 +41,14 @@ In Fig.~\ref{fig:nucleiLaplacian} we can observe the result of the LoG filter pe
 \item Watershed
     \ijmenu{[Process >  Binary > Watershed]}.
     Try the binary watershed command to separate touching nuclei.
+\item Analyze Particles.
+    At this point we obtained a binary image holding the segmented nuclei.
+    Using \ijmenu{[Analyze > Analyze Particle]} we can identify and measure several properties of these connected particles. This command also allows us to exclude an object based on its geometry. For our purpose,  we want to exclude deformed particles and particles that are too small or too big.
     
+    To exclude deformed particles, we can measure their circularity. The circularity describes how closely an object resembles a circle by computing the ratio between its area and its square perimeter. A perfect circle has a circularity parameter = 1. Any other object will have a circularity parameter smaller than 1, but greater than 0 (an infinite line). 
+    
+    Particles that are smaller or larger than given critical areas can also be excluded. The area bounds should be first determined empirically: you can do so by measuring the area of a typical nucleus and setting the lower and upper bounds to, for instance 0.66x and 1.5x this value. 
+    
+    Finally, particles touching a border can be easily discarded by ticking "Exclude on edges" in \ijmenu{[Analyze > Analyze Particles...]}. The purpose is to analyse FISH spots by nucleus, do not forget to also tick 'Add to Manager' to add the nuclei analyzed to the ROI Manager so that they can easily be accessed further on.
+
+\end{enumerate}    
