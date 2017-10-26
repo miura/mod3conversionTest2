@@ -8,7 +8,7 @@ grid:
   rows: 1
   columns: 1
   grid_elements:
-  - path: figures/NucBeforeLaplacian/NucBeforeLaplacian.png
+  - path: figures/NucBeforeLaplacian/mod3mergedsubfigreplacedfig-nucleiLaplacian.svg
     type: static
     from:
     - 1
@@ -16,3 +16,5 @@ grid:
     to:
     - 1
     - 1
+    folder_url: "/users/90123/articles/208220/master/folder/figures/NucBeforeLaplacian"
+    url: "/users/90123/articles/208220/master/file/figures/NucBeforeLaplacian/mod3mergedsubfigreplacedfig-nucleiLaplacian.svg"
