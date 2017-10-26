@@ -1,11 +1,4 @@
-\item Detect intensity regional minima with \ijmenu{[Process > Find Maxima...]}. You should tick \textbf{"Light background"} to detect minima and adjust \textbf{"Noise tolerance"} to optimize detection. Select \textbf{"Single Points"} as \textbf{"Output Type"} to create a binary mask with detected minima.
-    
-    \item Counting spots inside nuclei.
-    In Step 2 we have already segmented the nuclei and stored them to the ROI manager. Now, we simply need to select the binary mask holding the detect spots and loop through the nuclei ROIs. Next, we count the number of pixels with intensity equal to 255 to retrieve the number of spots per nucleus.
-    
-    For each nucleus we will measure the statistics of the intensity with the macro function \textbf{getRawStatistics(nPixels, mean, min, max, std, histogram)} which among other returns the histogram of the pixel intensity inside the active selection.
 
-\end{enumerate}
 
 \subsection{Exercise \arabic{exerciseCounter}}
 \stepcounter{exerciseCounter}
