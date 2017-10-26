@@ -8,7 +8,7 @@ grid:
   rows: 1
   columns: 1
   grid_elements:
-  - path: figures/Ch3BeforeLaplacian/Ch3BeforeLaplacian.png
+  - path: figures/Ch3BeforeLaplacian/mod3mergedsubfigreplacedfig-LogFilter.svg
     type: static
     from:
     - 1
@@ -16,5 +16,5 @@ grid:
     to:
     - 1
     - 1
-    url: "/users/90123/articles/208220/master/file/figures/Ch3BeforeLaplacian/Ch3BeforeLaplacian.png"
     folder_url: "/users/90123/articles/208220/master/folder/figures/Ch3BeforeLaplacian"
+    url: "/users/90123/articles/208220/master/file/figures/Ch3BeforeLaplacian/mod3mergedsubfigreplacedfig-LogFilter.svg"
