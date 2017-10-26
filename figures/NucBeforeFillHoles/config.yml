@@ -8,7 +8,7 @@ grid:
   rows: 1
   columns: 1
   grid_elements:
-  - path: figures/NucBeforeFillHoles/NucBeforeFillHoles.png
+  - path: figures/NucBeforeFillHoles/mod3mergedsubfigreplacedfig-NucFillHoles.svg
     type: static
     from:
     - 1
@@ -16,3 +16,5 @@ grid:
     to:
     - 1
     - 1
+    folder_url: "/users/90123/articles/208220/master/folder/figures/NucBeforeFillHoles"
+    url: "/users/90123/articles/208220/master/file/figures/NucBeforeFillHoles/mod3mergedsubfigreplacedfig-NucFillHoles.svg"
