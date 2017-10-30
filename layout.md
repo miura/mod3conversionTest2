@@ -18,6 +18,7 @@ figures/mod3mergedfig-NucOverlayDilate
 item_Watershed_____i.tex
 figures/NucBeforeWatershed
 item_Analyze_Particl.tex
+eej50nscq3s.tex
 textbfsourcecode__hr1.tex
 sectionStep_3_FISH_s.tex
 figures/Ch3BeforeLaplacian
