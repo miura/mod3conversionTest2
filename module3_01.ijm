@@ -10,3 +10,5 @@ run("Split Channels");
 run("Set Scale...", "distance=0 known=0 pixel=1 unit=pixel global");
 run("Options...", "iterations=1 count=1 edm=Overwrite");
 run("Set Measurements...", "area mean centroid shape redirect=None decimal=2");
+
+// test adding changes
