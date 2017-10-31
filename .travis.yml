@@ -6,7 +6,7 @@ python:
 # safelist
 branches:
   only:
-  - struct_authorea
+    - struct_authorea
 
 before_install:
   - bash ./preinstall.sh
