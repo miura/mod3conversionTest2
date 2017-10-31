@@ -16,3 +16,7 @@ install:
 
 script: 
   - python latex_update_codeGIT.py
+
+after_success:
+  - bash ./githubpush.sh
+
