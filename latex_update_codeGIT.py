@@ -42,8 +42,8 @@ def processOneFile(targettex, previousfile, filename):
             content = re.sub(r"(\\begin\{lstlisting\}.*\n)((.*\n)+)(\\end{lstlisting})", "\g<1>" + source + "\n\g<4>", content)
             print content
             replaced = True
-            #with open(codetexfile, 'w') as file:
-                #file.write(content)
+            with open(codetexfile, 'w') as file:
+                file.write(content)
             break
     #if not replaced:
         #print("... No Match found!: ")
