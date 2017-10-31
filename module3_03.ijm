@@ -36,7 +36,8 @@ for(i=1;i<4;i++)
 		if(i==1)NbSpotsChan1[j] = NbSpots;
 		if(i==2)NbSpotsChan2[j] = NbSpots;
 		if(i==3)NbSpotsChan3[j] = NbSpots;
-	}	
+	}
+	
 }
 run("Select None");
 
@@ -47,3 +48,5 @@ print("Array NbSpotsChan2:");
 Array.print(NbSpotsChan2);
 print("Array NbSpotsChan3:");
 Array.print(NbSpotsChan3);
+
+// a test to add some commits
