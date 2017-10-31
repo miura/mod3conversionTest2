@@ -10,4 +10,4 @@ install:
   - pip install gitpython
 
 script: 
-  - python printhello.py
+  - python latex_update_codeGIT.py
